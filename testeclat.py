@@ -3,8 +3,8 @@
 import data
 import eclat
 
-d = Data()
+d = data.Data()
 d.readTidLists('test.dat')
-e = Eclat(d.data, 2)
+e = eclat.Eclat(d.data, 2)
 e.run()
 e.print()
