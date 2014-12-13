@@ -22,4 +22,4 @@ class Eclat:
          self.run(suffix, prefix+[i])
 
    def print(self):
-      print(f)
+      print(self.f)
