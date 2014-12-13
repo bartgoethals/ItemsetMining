@@ -24,4 +24,4 @@ class Data:
           d[item] = set()
         d[item].add(trans)
     f.close()
-    self.data = d.items()
+    self.data = sorted(d.items(), key=lambda item: len(item[1]), reverse=True)
