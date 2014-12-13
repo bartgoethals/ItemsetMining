@@ -1,21 +1,24 @@
-import data
-
 class Eclat:
 
    def __init__(self):
      self.f = {}
 
-   def iProject(self, items, prefix=[]):
-     i, itids = items.pop()
-     isupp = len(itids)
-     suffix = [] 
-     for j, ojtids in items:
-        jtids = itids & ojtids
-        jsupp = len(jtids)
-        if jsupp >= minsup:
-          suffix.append((j,jtids))
-     return suffix
+   def iProject(self, itids, items):
+      """ creates the i-projected database by interstecting all tid-lists with the tid-list of i """ 
+      projection = [] 
+      for j, jtids in items:
+         ijtids = itids & jtids
+         if len(ijtids) >= minsup:
+            projection.append((j,ijtids))
+      return project
   
   def run(self, items, prefix=[]):
-        while items:
-            run(suffix, prefix+[i]+closure)
+     items.sort(key=lambda item: len(item[1]), reverse=True)
+     while items:
+        i, itids = items.pop()
+        f[str(prefix+[i])] = len(itids)
+        suffix = iProject(itids, items)
+        run(suffix, prefix+[i])
+
+  def print(self):
+     print(f)
