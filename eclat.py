@@ -9,7 +9,7 @@ class Eclat:
       projection = [] 
       for j, jtids in items:
          ijtids = itids & jtids
-         if len(ijtids) >= minsup:
+         if len(ijtids) >= self.minsup:
             projection.append((j,ijtids))
       return project
   
@@ -17,7 +17,7 @@ class Eclat:
       items.sort(key=lambda item: len(item[1]), reverse=True)
       while items:
          i, itids = items.pop()
-         f[str(prefix+[i])] = len(itids)
+         self.f[str(prefix+[i])] = len(itids)
          suffix = iProject(itids, items)
          run(suffix, prefix+[i])
 
