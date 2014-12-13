@@ -11,7 +11,7 @@ class Eclat:
          ijtids = itids & jtids
          if len(ijtids) >= self.minsup:
             projection.append((j,ijtids))
-      return project
+      return projection
   
    def run(self, items, prefix=[]):
       items.sort(key=lambda item: len(item[1]), reverse=True)
