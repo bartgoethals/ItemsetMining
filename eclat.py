@@ -1,7 +1,8 @@
 class Eclat:
 
-   def __init__(self):
+   def __init__(self, ms):
      self.f = {}
+     self.minsup = ms
 
    def iProject(self, itids, items):
       """ creates the i-projected database by interstecting all tid-lists with the tid-list of i """ 
