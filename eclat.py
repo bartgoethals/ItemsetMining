@@ -1,5 +1,5 @@
 class Eclat:
-
+   
    def __init__(self, ms):
      self.f = {}
      self.minsup = ms
@@ -13,13 +13,13 @@ class Eclat:
             projection.append((j,ijtids))
       return project
   
-  def run(self, items, prefix=[]):
-     items.sort(key=lambda item: len(item[1]), reverse=True)
-     while items:
-        i, itids = items.pop()
-        f[str(prefix+[i])] = len(itids)
-        suffix = iProject(itids, items)
-        run(suffix, prefix+[i])
+   def run(self, items, prefix=[]):
+      items.sort(key=lambda item: len(item[1]), reverse=True)
+      while items:
+         i, itids = items.pop()
+         f[str(prefix+[i])] = len(itids)
+         suffix = iProject(itids, items)
+         run(suffix, prefix+[i])
 
-  def print(self):
-     print(f)
+   def print(self):
+      print(f)
