@@ -10,16 +10,18 @@ most frequent itemset mining algorithms
 class Data:
 
   def __init__(self):
-    self.data = {}
-    self.trans = 0
+    self.data = []
 
   def readTidLists(self, filename):
+    trans = 0
+    d = {}
     f = open(filename, 'r')
     for row in f:
       s = row.strip().split(' ')
-      self.trans+=1
+      trans+=1
       for item in s:
-        if item not in self.data:
-          self.data[item] = set()
-        self.data[item].add(self.trans)
+        if item not in d:
+          d[item] = set()
+        d[item].add(trans)
     f.close()
+    self.data = d.items()
