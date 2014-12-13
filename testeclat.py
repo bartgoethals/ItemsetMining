@@ -5,6 +5,6 @@ import eclat
 
 d = Data()
 d.readTidLists('test.dat')
-e = Eclat(d.tidlists, 2)
+e = Eclat(d.data, 2)
 e.run()
 e.print()
