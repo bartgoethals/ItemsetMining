@@ -18,7 +18,7 @@ class Eclat:
       while items:
          i, itids = items.pop()
          self.f[str(prefix+[i])] = len(itids)
-         suffix = iProject(itids, items)
+         suffix = self.iProject(itids, items)
          run(suffix, prefix+[i])
 
    def print(self):
