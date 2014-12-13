@@ -19,7 +19,7 @@ class Eclat:
          i, itids = items.pop()
          self.f[str(prefix+[i])] = len(itids)
          suffix = self.iProject(itids, items)
-         run(suffix, prefix+[i])
+         self.run(suffix, prefix+[i])
 
    def print(self):
       print(f)
