@@ -17,9 +17,9 @@ class Data:
     f = open(filename, 'r')
     for row in f:
       s = row.strip().split(' ')
-      trans+=1
+      self.trans+=1
       for item in s:
-        if item not in data:
-          data[item] = set()
-        data[item].add(trans)
+        if item not in self.data:
+          self.data[item] = set()
+        self.data[item].add(self.trans)
     f.close()
