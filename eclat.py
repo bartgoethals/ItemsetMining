@@ -23,4 +23,4 @@ class Eclat:
 
    def print(self):
       for i in self.f:
-         print(i)
+         print(i, ':', self.f[i])
