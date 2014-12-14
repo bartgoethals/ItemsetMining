@@ -22,4 +22,5 @@ class Eclat:
          self.run(suffix, prefix+[i])
 
    def print(self):
-      print(self.f)
+      for i,s in self.f:
+         print(i,':', s)
