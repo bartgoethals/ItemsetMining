@@ -21,6 +21,7 @@ class Eclat:
          suffix = self.iProject(itids, items)
          self.run(suffix, prefix+[i])
 
-   def print(self):
+   def write(self):
       for i in self.f:
-         print(i, ':', self.f[i])
+         print i, ':', self.f[i]
+
