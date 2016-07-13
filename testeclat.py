@@ -4,7 +4,8 @@ import data
 import eclat
 
 d = data.Data()
-d.readTidLists('test.dat')
-e = eclat.Eclat(2)
+l = d.readTidLists('test.dat')
+e = eclat.Eclat(l,2)
 e.run(d.data)
 e.write()
+e.rules()

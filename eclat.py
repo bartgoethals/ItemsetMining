@@ -1,7 +1,8 @@
 class Eclat:
    
-   def __init__(self, ms):
+   def __init__(self, l, ms):
      self.f = {}
+     self.f[str([])]=l
      self.minsup = ms
 
    def iProject(self, itids, items):
@@ -17,9 +18,23 @@ class Eclat:
       items.sort(key=lambda item: len(item[1]), reverse=True)
       while items:
          i, itids = items.pop()
-         self.f[str(prefix+[i])] = len(itids)
+         self.f[str(sorted(prefix+[i]))] = len(itids)
          suffix = self.iProject(itids, items)
          self.run(suffix, prefix+[i])
+
+   def rules(self):
+      for i in self.f:
+	for h,t in self.powerset(eval(i)):
+          print str(h).strip('[]'),'=>',str(t).strip('[]'),':',self.f[i],float(self.f[i])/float(self.f[str(h)]) 
+
+   def powerset(self,elements):
+      if len(elements) > 0:
+         head = elements[0]
+         for h,t in self.powerset(elements[1:]):
+            yield h, [head] + t
+            yield [head]+h, t
+      else:
+         yield [],[]
 
    def write(self):
       for i in self.f:
